@@ -25,4 +25,19 @@ public class ContactController {
     public ContactRequest saveContactRequest(@RequestBody ContactRequest contactRequest){
         return contactService.saveContactRequest(contactRequest);
     }
+
+    @GetMapping("/{id}")
+    public ContactRequest getContactRequestById(@PathVariable Long id){
+        return contactService.getContactRequestById(id);
+    }
+
+    @PutMapping("/{id}")
+    public ContactRequest updateContactRequest(@PathVariable Long id, @RequestBody ContactRequest contactRequest) {
+        return contactService.updateContactRequest(id, contactRequest);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteContactRequest(@PathVariable Long id) {
+        contactService.deleteContactRequest(id);
+    }
 }
