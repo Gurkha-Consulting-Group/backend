@@ -23,6 +23,8 @@ RUN mvn -B -DskipTests package
 # Runtime stage: use the image specified by build arg
 FROM ${JRE_IMAGE}
 WORKDIR /app
+# Activate prod profile by default in the container. Override at runtime with Docker env vars if needed.
+ENV SPRING_PROFILES_ACTIVE=prod
 ARG JAR_FILE=target/backend-0.0.1-SNAPSHOT.jar
 COPY --from=builder /workspace/${JAR_FILE} app.jar
 
