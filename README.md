@@ -93,7 +93,7 @@ docker run -p 8080:8080 \
 # "The following profiles are active: local"
 
 # Test the app
-curl http://localhost:8080/health
+curl http://localhost:8080/api/health
 
 # Check H2 Console
 # Open: http://localhost:8080/h2-console
