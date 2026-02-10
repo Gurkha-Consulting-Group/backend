@@ -37,6 +37,8 @@ public class ContactService {
     }
 
     public void deleteContactRequest(Long id) {
-        contactRepository.deleteById(id);
+        if (contactRepository.existsById(id)) {
+            contactRepository.deleteById(id);
+        }
     }
 }

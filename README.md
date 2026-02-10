@@ -93,7 +93,7 @@ docker run -p 8080:8080 \
 # "The following profiles are active: local"
 
 # Test the app
-curl http://localhost:8080/health
+curl http://localhost:8080/api/health
 
 # Check H2 Console
 # Open: http://localhost:8080/h2-console
@@ -114,11 +114,11 @@ curl http://localhost:8080/health
 
 ### Run Automated Tests
 ```bash
-# Make script executable (if not already)
-chmod +x test-profiles.sh
+# Run unit and integration tests
+./mvnw test
 
-# Run verification script
-./test-profiles.sh
+# (Optional) Verify prod profile starts correctly
+./mvnw spring-boot:run -Dspring.profiles.active=prod
 ```
 
 ---
