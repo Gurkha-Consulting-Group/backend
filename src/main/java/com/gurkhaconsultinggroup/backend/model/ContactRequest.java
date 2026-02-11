@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
-
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="contact_request")
@@ -28,10 +27,10 @@ public class ContactRequest {
         private String message;
 
         @Column(nullable = false)
-        private Instant createdTs = Instant.now();
+        private LocalDateTime createdTs = LocalDateTime.now();
 
         @Column(nullable = false)
-        private Instant updatedTs = Instant.now();
+        private LocalDateTime updatedTs = LocalDateTime.now();
 
         @CreatedBy
         @Column(length = 120, updatable = false)
