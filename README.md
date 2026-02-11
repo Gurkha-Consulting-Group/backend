@@ -109,7 +109,7 @@ curl http://localhost:8080/api/health
 # Should connect to Supabase PostgreSQL
 
 # Test the app
-curl http://localhost:8080/health
+curl http://localhost:8080/api/health
 ```
 
 ### Run Automated Tests
